@@ -1,0 +1,57 @@
+{
+  "name": "d-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "deploy": "electron-builder --windows nsis:ia32"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "axios": "^0.27.2",
+    "electron": "^19.0.1",
+    "moment": "^2.29.3"
+  },
+  "build": {
+    "productName": "D-Talk",
+    "appId": "com.D-Talk.hello",
+    "asar": true,
+    "protocols": {
+      "name": "D-Talk",
+      "schemes": [
+        "D-Talk"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "buildResources": "./resources/installer/",
+      "output": "./dist/",
+      "app": "."
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "axios": "^0.27.2",
+    "electron": "^19.0.1",
+    "moment": "^2.29.3",
+    "electron-builder": "^23.0.3"
+  }
+}
