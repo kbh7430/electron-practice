@@ -1,11 +1,12 @@
 {
   "name": "d-talk",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "deploy:win64": "electron-builder --win --x64",
     "deploy": "electron-builder --windows nsis:ia32"
   },
   "author": "",
@@ -34,7 +35,7 @@
         "zip",
         "nsis"
       ],
-      "icon": "./resources/installer/Icon.ico"
+      "icon": "build/icons/icon.ico"
     },
     "nsis": {
       "oneClick": false,
@@ -42,8 +43,7 @@
     },
     "directories": {
       "buildResources": "./resources/installer/",
-      "output": "./dist/",
-      "app": "."
+      "output": "./dist/"
     }
   },
   "devDependencies": {
